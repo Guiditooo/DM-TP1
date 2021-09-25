@@ -78,11 +78,9 @@ public class GameManager : MonoBehaviour
 
 	void Update()
 	{
-
 		if (isMultiplayer)
 		{
 
-			//REINICIAR
 			if (Input.GetKey(KeyCode.Mouse1) && Input.GetKey(KeyCode.Keypad0))
 			{
 				SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -94,12 +92,9 @@ public class GameManager : MonoBehaviour
 				Application.Quit();
 			}
 
-
 			switch (EstAct)
 			{
 				case EstadoJuego.Calibrando:
-
-					//SKIP EL TUTORIAL
 					if (Input.GetKey(KeyCode.Mouse0) && Input.GetKey(KeyCode.Keypad0))
 					{
 						if (PlayerInfo1 != null && PlayerInfo2 != null)
@@ -136,8 +131,6 @@ public class GameManager : MonoBehaviour
 					break;
 
 				case EstadoJuego.Jugando:
-
-					//SKIP LA CARRERA
 					if (Input.GetKey(KeyCode.Mouse1) &&
 					   Input.GetKey(KeyCode.Keypad0))
 					{
@@ -255,6 +248,7 @@ public class GameManager : MonoBehaviour
 			}
 
 		}
+
 	}
 	
 	void OnGUI()
